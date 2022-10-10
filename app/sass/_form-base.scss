@@ -1,0 +1,49 @@
+// @import "bourbon";
+// @import "vars";
+
+*::-webkit-input-placeholder {
+  color: $color-placholder;
+  opacity: 1;
+}
+
+*:-moz-placeholder {
+  color: $color-placholder;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  color: $color-placholder;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder {
+  color: $color-placholder;
+  opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: #666;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+  color: #666;
+}
+
+//for iPhone
+input, textarea {
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+
+//for ios (form styler)
+//.block {
+//  display: block !important;
+//}
+//select {
+//  display: none !important;
+//}

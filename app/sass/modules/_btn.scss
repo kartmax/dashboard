@@ -1,0 +1,30 @@
+.btn {
+   font-family: $default-font;
+   font-weight: 500;
+   font-size: rem(14);
+   color: var(--text-color);
+   background: var(--bg-color);
+   border: 1px solid var(--border-color);
+   border-radius: 4px;
+   padding: 4px 10px;
+   min-width: 80px;
+   transition: $transition;
+   cursor: pointer;
+
+   &:hover {
+      box-shadow: 0 0 15px 10px (var(--color-shadow));
+   }
+
+   &.active {
+      --bg-color: rgba(22, 192, 152, 0.38);
+      --border-color: #00B087;
+      --text-color: #008767;
+      --color-shadow: rgba(22, 192, 152, .15);
+   }
+   &.inactive {
+      --bg-color: #FFC5C5;
+      --border-color: #DF0404;
+      --text-color: #DF0404;
+      --color-shadow: rgba(233, 4, 4, .15);
+   }
+}

@@ -1,0 +1,33 @@
+// @import "bourbon";
+
+//var for fonts
+$default-font: 'Poppins', sans-serif; // основной шрифт, будет назначен для body
+$base-font-size: 16; //px -- базовый размер шрифта, будет установлен для body
+
+//var colors
+$main-color: #5932EA;
+$color-active: #00B087;
+$color-inactive: #DF0404;
+$text-color: #292D32;
+$text-color-light: #B5B7C0;
+$icon-color: #9197B3;
+$color-title: #000;
+$color-placholder: #B5B7C0;
+
+$transition: all .25s ease-out;
+$transition: all .3s cubic-bezier(0.925, 0.165, 0.370, 0.935);
+
+
+//var width for wrapper
+// переменные применяются для задания размеров контейнеру
+// также задействованы в миксине response-val
+$min-width: 320; // px
+$max-width: 1440; // px
+
+// переменная для указания на каких расширенииях будет пересчитываться адаптивное значение
+// применяется в миксине response-val
+// 1 -- только если ширина окна меньше контейнера
+// 2 -- только если ширина окна больше контейнера
+// 0 -- всегда
+$type-responsive-val: 1;
+

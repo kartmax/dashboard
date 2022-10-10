@@ -1,0 +1,68 @@
+// @import "bourbon";
+// @import "vars";
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px){}
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px){}
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px){}
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px){}
+	/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px){}
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px){}
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px){}
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){}
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){}
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){}
+	/**/
+
+
+/*==========  for IE  ==========*/
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* стили только для IE10 IE11 */
+  // flex: 200px 1 1;
+}
+
+/*==========  for gorizont orientation  ==========*/
+@media screen and (max-width: 1150px) and (orientation: landscape) {
+
+}

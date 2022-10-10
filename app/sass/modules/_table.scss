@@ -1,0 +1,108 @@
+.table {
+   --border-color: #eee;
+   --padding-td: 5px;
+   font-size: rem(14);
+   font-weight: 500;
+   width: calc(100% + var(--padding-td));
+   min-width: 650px;
+   text-align: left;
+   @include response-val('margin-top', 26, 18, $type-responsive-val);
+   margin-left: calc(var(--padding-td) * -1);
+
+   thead {
+      position: relative;
+      color: $text-color-light;
+
+      &::before, 
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         display: block;
+         height: 1px;
+         background-color: var(--border-color);
+
+         @media only screen and (max-width : 1200px){
+            width: 30px;
+         }
+      }
+      &::before {
+         width: 38px;
+         right: 100%;
+      }
+      &::after {
+         width: 27px;
+         left: 100%;
+      }
+   }
+
+   tr {
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+
+      &::before, &::after {
+         content: '';
+         display: block;
+         height: 100%;
+         position: absolute;
+         top: 0;
+      }
+      &::before {
+         width: 38px;
+         right: 100%;
+      }
+      &::after {
+         width: 27px;
+         left: 100%;
+      }
+      &:hover {
+         background-color: rgba($color: gray, $alpha: .03);
+         &::before, &::after {
+            background-color: rgba($color: gray, $alpha: .03);
+         }
+      }
+   }
+
+   .th-status {
+      text-align: center;
+   }
+   .th-number {
+      letter-spacing: .018em;
+      white-space: nowrap;
+   }
+
+   th, td {
+      padding-left: var(--padding-td);
+      padding-right: var(--padding-td);
+   }
+
+   th {
+      padding-top: 14px;
+      padding-bottom: 14px;
+   }
+
+   td {
+      @include response-val('padding-top', 18.4, 18, $type-responsive-val);
+      @include response-val('padding-bottom', 18.4, 18, $type-responsive-val);
+      vertical-align: middle;
+
+      a {
+         color: $text-color;
+      }
+   }
+   th:nth-child(1), td:nth-child(1) {
+      width: 19%;
+   }
+   th:nth-child(2), td:nth-child(2) {
+      width: 14.5%;
+   }
+   th:nth-child(3), td:nth-child(3) {
+      width: 17%;
+   }
+   th:nth-child(4), td:nth-child(4) {
+      width: 23%;
+   }
+   th:nth-child(5), td:nth-child(5) {
+      width: 14.1%;
+   }
+}

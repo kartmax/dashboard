@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+   <!-- Head -->
+   @@include("../html_components/head.html", {
+      "title" : "Dashboard"
+   })
+   <!-- End Head -->
+<body>
+	<!-- Custom HTML -->
+	
+	<!-- Preloader -->
+   @@include("../html_components/preloader.html", {})
+	<!-- End Preloader -->
+
+	<!-- Header -->
+	<!-- @@include("../html_components/header.html", {}) -->
+	<!-- End Header -->
+
+	<!-- Content -->
+	<main>
+      @@include("../html_components/sidebar.html", {})
+      <div class="content-wrap">
+         <div class="inner-wrap">
+            <div class="heading">
+               <h3 class="hello-user"><span>Hello Evano</span> 👋🏼,</h3>
+            </div>
+            <section class="customers">
+               <div class="customers__header">
+                  <div class="customers__header_left">
+                     <h1 class="title">All Customers</h1>
+                     <p class="sub-title">Active Members</p>
+                  </div>
+                  <div class="customers__header_right">
+                     <form name="search_form" class="search-form">
+                        <input type="text" name="search" placeholder="Search">
+                        <button class="search_form__btn">
+                           <svg class="icon search"><use xlink:href="#search"></use></svg>
+                        </button>
+                     </form>
+                  </div>
+               </div>
+               <div class="customers__body">
+                  <table class="table" cellspacing="0">
+                     <thead>
+                        <tr>
+                           <th>Customer Name</th>
+                           <th>Company</th>
+                           <th>Phone Number</th>
+                           <th>Email</th>
+                           <th>Country</th>
+                           <th class="th-status">Status</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Jane Cooper</td>
+                           <td>Microsoft</td>
+                           <td class="th-number"><a href="tel:2255550118">(225) 555-0118</a></td>
+                           <td><a href="mailto:jane@microsoft.com">jane@microsoft.com</a></td>
+                           <td>United States</td>
+                           <td class="th-status"><button class="btn active">Active</button></td>
+                        </tr>
+                        <tr>
+                           <td>Floyd Miles</td>
+                           <td>Yahoo</td>
+                           <td class="th-number"><a href="tel:2055550100">(205) 555-0100</a></td>
+                           <td><a href="mailto:floyd@yahoo.com">floyd@yahoo.com</a></td>
+                           <td>Kiribati</td>
+                           <td class="th-status"><button class="btn inactive">Inactive</button></td>
+                        </tr>
+                        <tr>
+                           <td>Ronald Richards</td>
+                           <td>Adobe</td>
+                           <td class="th-number"><a href="tel:3025550107">(302) 555-0107</a></td>
+                           <td><a href="mailto:ronald@adobe.com">ronald@adobe.com</a></td>
+                           <td>Israel</td>
+                           <td class="th-status"><button class="btn inactive">Inactive</button></td>
+                        </tr>
+                        <tr>
+                           <td>Marvin McKinney</td>
+                           <td>Tesla</td>
+                           <td class="th-number"><a href="tel:2525550126">(252) 555-0126</a></td>
+                           <td><a href="mailto:marvin@tesla.com">marvin@tesla.com</a></td>
+                           <td>Iran</td>
+                           <td class="th-status"><button class="btn active">Active</button></td>
+                        </tr>
+                        <tr>
+                           <td>Jerome Bell</td>
+                           <td>Google</td>
+                           <td class="th-number"><a href="tel:6295550129">(629) 555-0129</a></td>
+                           <td><a href="mailto:jerome@google.com">jerome@google.com</a></td>
+                           <td>Réunion</td>
+                           <td class="th-status"><button class="btn active">Active</button></td>
+                        </tr>
+                        <tr>
+                           <td>Kathryn Murphy</td>
+                           <td>Microsoft</td>
+                           <td class="th-number"><a href="tel:4065550120">(406) 555-0120</a></td>
+                           <td><a href="mailto:kathryn@microsoft.com">kathryn@microsoft.com</a></td>
+                           <td>Curaçao</td>
+                           <td class="th-status"><button class="btn active">Active</button></td>
+                        </tr>
+                        <tr>
+                           <td>Jacob Jones</td>
+                           <td>Yahoo</td>
+                           <td class="th-number"><a href="tel:2085550112">(208) 555-0112</a></td>
+                           <td><a href="mailto:jacob@yahoo.com">jacob@yahoo.com</a></td>
+                           <td>Brazil</td>
+                           <td class="th-status"><button class="btn active">Active</button></td>
+                        </tr>
+                        <tr>
+                           <td>Kristin Watson</td>
+                           <td>Facebook</td>
+                           <td class="th-number"><a href="tel:7045550127">(704) 555-0127</a></td>
+                           <td><a href="mailto:kristin@facebook.com">kristin@facebook.com</a></td>
+                           <td>Åland Islands</td>
+                           <td class="th-status"><button class="btn inactive">Inactive</button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="customers__footer">
+                  <div class="customers__footer_left">
+                     <p>Showing data <span>1</span> to <span>8</span> of <span>256</span>K entries</p>
+                  </div>
+                  <div class="customers__footer_rigth">
+                     <nav class="navigation pagination" role="navigation">
+                        <div class="screen-reader-text">Post navigation</div>
+                        <div class="nav-links">
+                           <a class="prev page-numbers" href="#">&lt</a>
+                              <span class="page-numbers current">1</span>
+                              <a class="page-numbers" href="#">2</a>
+                              <a class="page-numbers" href="#">3</a>
+                              <a class="page-numbers" href="#">4</a>
+                              <span class="page-numbers dots">...</span>
+                              <a class="page-numbers" href="#">40</a>
+                              <a class="next page-numbers" href="#">&gt</a>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+	</main>
+	<!-- End Content -->
+
+   <!-- Footer -->
+	@@include("../html_components/footer.html", {})
+   <!-- End Footer -->
+   
+</body>
+</html>

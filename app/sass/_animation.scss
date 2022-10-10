@@ -1,0 +1,32 @@
+
+@keyframes animat-btn {
+  0% {
+    //opacity: 1;
+  }
+
+  100% {
+    //opacity: 0.2;
+  }
+}
+
+@keyframes animlBtnSidebar {
+   0% {
+     fill: #000;
+   }
+      
+   100% {
+      fill: $main-color;
+   }
+ }
+
+.btn {
+  //background-color: green;
+  //animation: animat-btn 0.2s ease 0.3s infinite alternate; // сокращенная запись
+
+  //animation-name: animat-btn; // название
+  //animation-duration: 0.2s; // продолжительность
+  //animation-timing-function: ease; // скоростной режим
+  //animation-delay: 0.3s; // задержка перед выполнением
+  //animation-iteration-count: infinite; // количество циклов анимации
+  //animation-direction: alternate; // направление анимации
+}

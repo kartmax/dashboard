@@ -1,0 +1,95 @@
+@use "sass:math";
+
+//Mixin to calculate REM
+@function calculateRem($size) {
+  // $remSize: $size / 16px;
+  // $remSize: math.div($size, 16px);
+  $remSize: math.div($size, $base-font-size);
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+
+//Mixin to sprite png url
+//@include sprite($icon-search); - так вставлять картинку в спрайта
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(../img/#{$sprite-image});
+}
+
+
+// function px to rem
+// пример вызова - font-size: rem(24);
+@function rem($px) {
+   $result: math.div($px, 16) + rem;
+   @return $result;
+}
+
+// function px to em
+// пример вызова - font-size: em(24, 20);
+@function em($px, $parentFont) {
+   $result: math.div($px, $parentFont) + em;
+   @return $result;
+}
+
+// function px to %
+// пример вызова - width: prc(100, 1000);
+@function prc($pxOne, $pxTwo) {
+   $result: math.div($pxOne, $pxTwo) * 100%;
+   @return $result;
+}
+
+
+// Вычисляемое адаптивное значение
+// $property -- нужное css-свойство, padding, font-size...
+// $DesctopVal -- начальное значение для десктопа
+// $MobailVal -- минимальное значение для мобильных
+/*
+$type -- для условия
+         1 -- только если ширина окна меньше контейнера
+         2 -- только если ширина окна больше контейнера
+         0 -- всегда
+*/ 
+// Пример вызова миксины (если $min-widht: 320; $max-widht: 1440)
+// @include response-val('font-size', 32, 20, 0)
+// аналогично без миксины - font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1440 - 320)));
+// или font-size: calc(20px + (32 - 20) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+// шрифт будет 20px при размере окна в 320px, 32px -- при размере окна в 1440px, на остальных расширенях будет изменятся всегда
+@mixin response-val ($property, $DesctopVal, $MobailVal, $type) {
+   $addSize: $DesctopVal - $MobailVal;
+   @if $type == 1 {
+      // Только если МЕНЬШЕ контейнера
+      // #{$property}: $DesctopVal + px;
+      #{$property}: calc(#{$DesctopVal}rem / 16);
+      @media (max-width: #{$max-width + px}) {
+         // #{$property}: calc(#{$MobailVal}px + #{$addSize} * ((100vw - #{$min-width}px) / (#{$max-width - $min-width})));
+         #{$property}: calc(#{$MobailVal}rem / 16 + #{$addSize} / 16 * ((100vw - #{$min-width}rem / 16) / (#{$max-width - $min-width} / 16)));
+      }
+   }
+   @else if $type == 2 {
+      // Только если БОЛЬШЕ контейнера
+      // #{$property}: $DesctopVal + px;
+      #{$property}: calc(#{$DesctopVal}rem / 16);
+      @media (min-width: #{$max-width + px}) {
+         // #{$property}: calc(#{$MobailVal}px + #{$addSize} * ((100vw - #{$min-width}px) / (#{$max-width - $min-width})));
+         #{$property}: calc(#{$MobailVal}rem / 16 + #{$addSize} / 16 * ((100vw - #{$min-width}rem / 16) / (#{$max-width - $min-width} / 16)));
+      }
+   }
+   @else {
+      // Всегда
+      // #{$property}: calc(#{$MobailVal}px + #{$addSize} * ((100vw - #{$min-width}px) / (#{$max-width - $min-width})));
+      #{$property}: calc(#{$MobailVal}rem / 16 + #{$addSize} / 16 * ((100vw - #{$min-width}rem / 16) / (#{$max-width - $min-width} / 16)));
+   }
+}
+
+
+@function res-val ($DesctopVal, $MobailVal, $type) {
+   $addSize: $DesctopVal - $MobailVal;
+   $result: calc(#{$MobailVal}rem / 16 + #{$addSize} / 16 * ((100vw - #{$min-width}rem / 16) / (#{$max-width - $min-width} / 16)));
+   @return $result;
+}
+

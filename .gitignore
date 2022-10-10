@@ -1,0 +1,16 @@
+/node_modules/
+/.git/
+/app/css/
+/**/*.psd
+/**/Thumbs.db
+/**/*.DS_Store
+
+# /dist/
+/manifest/
+
+# Arhivs
+/**/*.rar
+/**/*.zip
+
+# PhpStorm
+/.idea/

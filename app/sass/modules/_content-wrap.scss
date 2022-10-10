@@ -1,0 +1,76 @@
+main {
+   --size-sidebar: 85px;
+   --size-sidebar-open-for-js: 306px;
+   --size-sidebar-close-for-js: 85px;
+   display: flex;
+   justify-content: space-between;
+
+   @media only screen and (max-width : 1200px){
+      --size-sidebar: 70px;
+      --size-sidebar-open-for-js: 250px;
+      --size-sidebar-close-for-js: 70px;
+   }
+   @media only screen and (max-width : 992px){
+      --size-sidebar: 70px;
+      --size-sidebar-open-for-js: 220px;
+      --size-sidebar-close-for-js: 70px;
+   }
+   @media only screen and (max-width : 768px){
+      --size-sidebar: 70px;
+      --size-sidebar-open-for-js: 220px;
+      --size-sidebar-close-for-js: 70px;
+   }
+   @media only screen and (max-width : 600px){
+      --size-sidebar: 56px;
+      --size-sidebar-open-for-js: 220px;
+      --size-sidebar-close-for-js: 56px;
+   }
+}
+
+.content-wrap {
+   @include response-val('padding-top', 40, 30, $type-responsive-val);
+   @include response-val('padding-bottom', 40, 30, $type-responsive-val);
+   padding-left: 20px;
+   padding-right: 37px;
+   width: calc(100% - var(--size-sidebar));
+   margin-left: var(--size-sidebar);
+   transition: $transition;
+
+   @media only screen and (max-width : 1200px){
+      padding-right: 15px;
+   }
+   @media only screen and (max-width : 768px){
+      padding-left: 15px;
+   }
+   @media only screen and (max-width : 600px){
+      padding-left: 10px;
+   }
+}
+
+.inner-wrap {
+   max-width: 968px;
+   margin-left: auto;
+   margin-right: auto;
+   overflow-x: auto
+}
+
+.heading {
+   overflow-x: auto;
+}
+.hello-user {
+   @include response-val('font-size', 24, 20, $type-responsive-val);
+   @include response-val('margin-bottom', 51, 15, $type-responsive-val);
+   font-weight: 500;
+   min-width: 200px;
+   color: #000;
+}
+
+.title {
+   font-size: rem(22);
+   font-weight: 600;
+   color: $color-title;
+}
+.sub-title {
+   font-size: rem(14);
+   color: #16C098;
+}
